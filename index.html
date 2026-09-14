@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Okta Food</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #fff8ef;
+            color: #3d2b1f;
+        }
+
+        header {
+            background: linear-gradient(135deg, #7b4b2a, #c9874b);
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+            border-radius: 0 0 30px 30px;
+        }
+
+        header h1 {
+            font-size: 38px;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .judul {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .judul h2 {
+            font-size: 28px;
+        }
+
+        .judul p {
+            color: #856f61;
+            margin-top: 5px;
+        }
+
+        .menu {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 22px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(90, 55, 30, 0.12);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .isi {
+            padding: 20px;
+        }
+
+        .isi h3 {
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .isi p {
+            color: #76665d;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .harga {
+            color: #a45b27;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 12px 0;
+        }
+
+        .jumlah {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid #dfcbbb;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            background: #fffaf5;
+        }
+
+        .btn {
+            width: 100%;
+            border: none;
+            padding: 12px;
+            border-radius: 12px;
+            background: #6f9e67;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #557d4e;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+            background: #3d2b1f;
+            color: white;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🍽️ OKTA FOOD</h1>
+        <p>Jajanan sederhana, rasa luar biasa ✨</p>
+    </header>
+
+    <div class="container">
+
+        <div class="judul">
+            <h2>Menu Kami</h2>
+            <p>Pilih makanan favoritmu dan pesan langsung lewat WhatsApp 💬</p>
+        </div>
+
+        <div class="menu">
+
+            <!-- RUJAK CINGUR -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80"
+                     alt="Rujak Cingur">
+
+                <div class="isi">
+                    <h3>🥗 Rujak Cingur</h3>
+                    <p>Rujak khas dengan bumbu petis yang gurih, manis dan nikmat.</p>
+
+                    <div class="harga">Rp15.000</div>
+
+                    <select class="jumlah" id="rujak">
+                        <option value="1">1 Porsi</option>
+                        <option value="2">2 Porsi</option>
+                        <option value="3">3 Porsi</option>
+                        <option value="4">4 Porsi</option>
+                        <option value="5">5 Porsi</option>
+                    </select>
+
+                    <button class="btn"
+                        onclick="pesan('Rujak Cingur', 15000, 'rujak')">
+                        💬 Pesan via WhatsApp
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- ES LEGEN -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=800&q=80"
+                     alt="Es Legen">
+
+                <div class="isi">
+                    <h3>🥤 Es Legen</h3>
+                    <p>Minuman segar dengan rasa manis alami yang cocok diminum kapan saja.</p>
+
+                    <div class="harga">Rp8.000</div>
+
+                    <select class="jumlah" id="legen">
+                        <option value="1">1 Gelas</option>
+                        <option value="2">2 Gelas</option>
+                        <option value="3">3 Gelas</option>
+                        <option value="4">4 Gelas</option>
+                        <option value="5">5 Gelas</option>
+                    </select>
+
+                    <button class="btn"
+                        onclick="pesan('Es Legen', 8000, 'legen')">
+                        💬 Pesan via WhatsApp
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- GORENGAN -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=800&q=80"
+                     alt="Gorengan">
+
+                <div class="isi">
+                    <h3>🥟 Gorengan</h3>
+                    <p>Gorengan renyah dan gurih, cocok untuk teman santai.</p>
+
+                    <div class="harga">Rp2.000</div>
+
+                    <select class="jumlah" id="gorengan">
+                        <option value="1">1 Buah</option>
+                        <option value="2">2 Buah</option>
+                        <option value="3">3 Buah</option>
+                        <option value="4">4 Buah</option>
+                        <option value="5">5 Buah</option>
+                        <option value="10">10 Buah</option>
+                    </select>
+
+                    <button class="btn"
+                        onclick="pesan('Gorengan', 2000, 'gorengan')">
+                        💬 Pesan via WhatsApp
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <footer>
+        <p>© 2026 OKTA FOOD</p>
+        <p>📱 Pesan melalui WhatsApp</p>
+    </footer>
+
+
+    <script>
+
+        // GANTI NOMOR INI DENGAN NOMOR WHATSAPP PENJUAL
+        const nomorPenjual = "6281233136219";
+
+        function pesan(nama, harga, id) {
+
+            let jumlah = document.getElementById(id).value;
+
+            let total = harga * jumlah;
+
+            let pesan =
+                "Halo Kak, saya mau pesan:%0A%0A" +
+                "🍽️ " + nama + "%0A" +
+                "Jumlah: " + jumlah + "%0A" +
+                "Harga: Rp" + harga.toLocaleString("id-ID") + "%0A" +
+                "Total: Rp" + total.toLocaleString("id-ID") + "%0A%0A" +
+                "Terima kasih 😊";
+
+            let link = "https://wa.me/6281233136219" + nomorPenjual + "?text=" + pesan;
+
+            window.open(link, "_blank");
+        }
+
+    </script>
+
+</body>
+</html>
